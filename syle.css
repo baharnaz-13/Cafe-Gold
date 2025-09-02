@@ -1,0 +1,367 @@
+:root {
+    --text: #2b251a;
+    --bg: #c9b6a9;
+    --tan: ;
+    --coffee-dark:#ffffff;
+    --white: #ffffff;
+    --coffee:      #452815;
+    --peru:        #73411F;
+    --barley-corn: #B6885D;
+    --back-nav:      #d1d1b6f3;
+    --champagne:   #E8D2B8;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    direction: rtl;
+    text-align: right;
+}
+
+html,body {margin: 0; padding: 0;}
+
+body {
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.contair {
+    width: min(1120px, 92vw);
+    margin:0 auto;
+}
+
+.brand{
+  font-weight: 700; 
+  font-size: 1.5rem;
+  margin-left: 50px;
+  color: var(--coffee-dark); 
+  text-decoration: none;
+}
+
+.site-header {
+    background: transparent;
+    position: sticky; 
+    top: 0; 
+    z-index: 10;
+}
+
+.nav {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: 400px;
+    margin-top: 20px;
+    margin-right: 200px;
+    
+    
+}
+
+.menu {
+    
+    display: flex;
+    gap: 100px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--coffee-dark);
+    font-weight: 600;
+    opacity: .9;
+    transition: 0.3s;
+}
+
+.menu a:hover, .menu a.active{ opacity: 1; text-decoration: underline; }
+
+.menu-toggle{
+  margin-left: auto;
+  font-size: 1.5rem;
+  border: 0; background: transparent; cursor: pointer;
+  color: var(--coffee-dark);
+}
+
+@media (min-width: 768px){
+  .menu{ display: flex; }
+  .menu-toggle{ display: none; }
+}
+
+.hero {
+  position: relative;
+  overflow: clip;
+  background: var(--bg);
+  isolation: isolate;           /* ensure overlay blends correctly */
+}
+
+.hero_overlay{
+  position: absolute; inset: 0; z-index: -1;
+  /* background image + soft vignette for readability */
+  background:
+    radial-gradient(1200px 600px at 20% 30%, rgba(0,0,0,.35), transparent 60%),
+    linear-gradient(0deg, rgba(0,0,0,.25), rgba(0,0,0,.0) 40%),
+    url("https://i.pinimg.com/1200x/86/18/a3/8618a35c4f4eea10b92b8eaf9fae18c3.jpg") center/cover no-repeat;
+    filter: saturate(0.9);
+    
+}
+
+.imgg {
+  max-width: 300px;
+  max-width: 200px;
+  
+}
+
+.hero_content{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 32px;
+  padding: clamp(40px, 6vw, 80px) 0;
+  min-height: min(80vh, 760px);
+}
+
+@media (min-width: 960px){
+  .hero_content{ grid-template-columns: 1.1fr .9fr; }
+}
+
+.hero_text h1{
+  margin: 0 0 12px;
+  font-size: clamp(32px, 5vw, 56px);
+  color: var(--white);
+  line-height: 1.1;
+  text-shadow: 0 2px 18px rgba(0,0,0,.28);
+  margin-right: 50px;
+}
+
+.hero_text p{
+  max-width: 52ch;
+  color: #ffffff;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+.hero_actions{ 
+  display: flex; 
+  gap: 14px; 
+  flex-wrap: wrap;
+  
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+  margin-left: 250px;
+}
+
+.gap {
+  width: 50px;
+  height: 80px;
+}
+
+.btn-ghost{
+  background: rgb(223, 177, 117);
+  color: #423223;
+  border: 2px solid rgba(255,255,255,.7);
+  margin-right: 50px;
+}
+.btn-ghost:hover{ background: rgba(255,255,255,.22); transform: translateY(-1px); }
+
+.hero_image{
+  margin: 0;
+  display: grid; 
+  place-items: center;
+}
+
+.hero_image img{
+  width: min(560px, 90%);
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  margin-top: 30px;
+  /* subtle floating effect */
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+
+.special {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f4f4f4;
+}
+
+.special h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #222;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu-card {
+  background: #fff;
+  width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.menu-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.menu-card span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.menu-card button {
+  padding: 8px 15px;
+  background: #c49a6c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-card button:hover {
+  background: #a97d50;
+}
+
+.menu-tabs {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.menu-tabs .tab-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu-tabs button.active {
+  background: #b88a5c; /* رنگ طلایی قشنگ */
+  color: white;
+}
+
+/* گرید آیتم‌ها */
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.menu-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+.menu-card.hide {
+  display: none;
+}
+
+.location {
+  background-color: #73411F;
+  height: 100vh;
+  width: 100%;
+  
+}
+
+.foterimg {
+  z-index: 1;
+  display: flex; 
+  width: min(560px, 90%);
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  float: right;  
+  margin: 30px 10px 10px 20px;
+}
+
+
+
+
+
+.location {
+  background-color: #73411F;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* faza ro be do ghesmat taghsim mikone */
+  align-items: center; /* be sorat vertical vasat */
+  padding: 0 50px;
+  color: #fff; /* matn sefid baraye contrast */
+  direction: rtl; /* vase farsi kardan neveshte */
+}
+
+.info {
+  max-width: 400px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #FFD700; /* talaei baraye ghashangi */
+}
+
+.foterimg {
+  width: min(560px, 90%);
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+}
